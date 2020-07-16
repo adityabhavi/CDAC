@@ -1,0 +1,122 @@
+1. create database Exercise
+
+2. use database
+
+3. create table semp (
+	empno char(4),  
+	empname char(20), 
+	basic float(9,2),
+
+	deptno char(2), 
+	depthead char(4)
+	);
+
+4. insert into semp (EMPNO,EMPNAME,BASIC,DEPTNO) 
+	values('0001', 'SUNIL', 6000, '10');
+
+5. insert into semp (EMPNO,EMPNAME,BASIC,DEPTNO) 
+	values('0002', 'HIREN', 8000, '20');
+
+6. insert into semp  values('0003', 'ALI', 4000, '10', '0001');
+
+7. insert into semp (EMPNO,EMPNAME,BASIC,DEPTHEAD) 
+	values('0004', 'GEORGE', 6000, '0002');
+
+8. create table sdept ( DEPTNO CHAR(2), DEPTNAME CHAR(15));
+
+9. insert into sdept values('10', 'Development'),('20', 'Training');
+
+10. create table supplier(`S#` CHAR(2), Sname CHAR(20), Status int,City char(20));
+
+11. insert into SUPPLIER 
+values 
+	('S1','Aditya',10,'London'),
+	('S2','Kiran',20,'Paris'),
+        	
+	('S3','Bhushan',30,'Athens'),
+	('S4','Akash',40,'Boston'),
+        
+	('S5','Ritesh',50,'Sydeny'),
+	('S6','Eshan',70,'New York');
+
+12. create table PARTS(
+	
+`P#` char(4),
+	
+Pname varchar(20),
+
+	Color varchar(20),
+	
+Weight float(5,2),
+
+	City char(20)
+
+	);
+
+13. insert into PARTS 
+values 
+	('P1','A','Red',25.6,'London'),
+	('P2','B','Blue',25.9,'Paris'),
+        
+	('P3','C','Yellow',45.6,'Athens'),
+	('P4','D','Red',85.2,'Boston'),
+        
+	('P5','E','White',12.5,'Sydeny'),
+	('P6','F','Green',75.2,'New York');
+
+14. create table PROJECTS(
+`J#` char(2),
+Jname varchar(20),
+City char(20)
+);
+
+15. insert into PROJECTS 
+values 
+	('J1','Thermal','London'),
+	('J2','Highway','Paris'),
+     
+	('J3','ABB','Athens'),
+	('J4','Honey Well','Boston'),
+        
+	('J5','CRM','Sydeny'),
+	('J6','BANK','New York');
+
+16. create table if not exists SUPPLIER_PARTS_PROJECT(`S#` char(4),`P#` char(4),`J#` char(4),Qty float(5,2));
+
+17. insert into SUPPLIER_PARTS_PROJECT 
+values
+	('S1','P2','J3',65.3),
+	('S2','P4','J6',24.5),
+	('S3','P3','J6',45.3),
+		
+	('S4','P6','J6',23.65),
+	('S5','P3','J5',41.3),
+	('S6','P1','J2',75.1);
+
+	
+	QUERIES
+
+#5. select * from SUPPLIER;
+
+#6. select `S#`,Sname  from SUPPLIER;
+
+#7. select pname,Color from PARTS where City ='London';
+
+#8. select * from SUPPLIER where city= 'London';
+
+#9. select * from SUPPLIER where city in ('paris','Athens');
+
+#10. select * from PROJECTS where City='Athens';
+
+#11. select * from PARTS where weight >=12 and  weight<=14;
+
+#12. select * from SUPPLIER where Status >= 20 ; 
+
+#13. select * from SUPPLIER where City <> 'London';
+
+#14. select City from Supplier; 
+
+#15. select Weight as `Weight in grams`,Weight*1000 AS
+	 `weight in milligrams`, 
+Weight/1000 As `Weight in killograms` from parts;
+
