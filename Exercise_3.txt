@@ -1,0 +1,38 @@
+SQL Exercise 3
+
+1. Display all the Supplier names with the initial letter capital.
+-->>	select concat(upper(substr(Sname,1,1)),substr(Sname,2)) as "Sname" from supplier;
+
+
+
+2. Display all the Supplier names in upper case.
+-->>	select upper(Sname) from supplier;
+
+
+3. Display all the Supplier names in lower case.
+-->>	select lower(Sname) from supplier;
+
+
+4. Display all the Supplier names padded to 25 characters, with spaces on the left.
+-->>	select lpad(Sname,25,' ') from supplier;
+
+
+5. Display all the Supplier names (with ‘la’ replaced by ‘ro’).
+-->>	
+select replace(Sname,'ha','zz') from supplier;
+
+##
+SELECT replace((replace(replace(replace(sname,'E',''),'A',''),'a','')),'e','')  from supplier;
+
+6. Implement the above command such that ‘l’ is replaced with ‘r’ and ‘a’ is replaced with ‘o’.
+-->>	
+SELECT replace((replace(sname,'l','r')),'a','o')  from supplier;
+
+7. Display the Supplier names and the lengths of the names.
+-->>	SELECT length(Sname) from supplier;
+
+
+8. Use the soundex function to search for a supplier by the name of ‘BLOKE’.
+-->>	
+select * from supplier where soundex(sname)=soundex('AAdeetyaa');
+
