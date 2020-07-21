@@ -12,11 +12,23 @@ SQL Exercise 2
 4. Display all the Parts and their Weight, which are not in the range of 10 and 15.
 -->> select pname, weight from parts where weight not between 10 and 15;
 
-5. Display all the Part names starting with the letter ‘S’.
+5. Display all the Part names starting with the letter â€˜Sâ€™.
 -->> select pname from parts where pname like 's%';
 
-6. Display all the Suppliers, belonging to cities starting with the letter ‘L’.
+6. Display all the Suppliers, belonging to cities starting with the letter â€˜Lâ€™.
 -->>	select sname from supplier where city like 'L%';
 
-7. Display all the Projects, with the third letter in JNAME as ‘n’.
+7. Display all the Projects, with the third letter in JNAME as â€˜nâ€™.
 -->>	select Jname "JNAME" from projects where jname like '__n%';
+
+8. Use the soundex function to search for a supplier by the name of â€˜BLOKEâ€™.
+-->>	select * from supplier where soundex(sname)=soundex('AAdeetyaa');
+
+9. Display the Supplier name and the status (as Ten, Twenty, Thirty, 	etc.).
+-->>	select sname, case when status=10 then 'Ten' when status=20 then 	'Twenty' when status=30 then 'Three'
+       when status=40 then 'Fourty' when 	status=50 then 'Fifty' when status=60 then 'Sixty' when status=70 then 	'Seventy' 
+        when status=80 then 'Eight' 
+        else 'Other' end as status from 		supplier;
+
+10. Display the current day (e.g. Thursday).
+-->>	select dayname(sysdate()) from dual;
