@@ -1,0 +1,27 @@
+SQL Exercise 4
+
+1. Display the minimum Status in the Supplier table.
+->>	select min(status) from supplier;
+
+
+2. Display the maximum Weight in the Parts table.
+-->>	select max(weight) from parts;
+
+3. Display the average Weight of the Parts.
+-->>	select avg(weight) from parts;
+
+4. Display the total Quantity sold for part ‘P1’.
+-->>	select `P#`,Qty from supplier_parts_project where `P#`='P1';
+
+5. Display the total Quantity sold for each part.
+-->>	select `P#`,sum(Qty) "Total Quantity" from  supplier_parts_project 	group by `P#`;  
+
+6. Display the average Quantity sold for each part.
+-->>	select `P#`,avg(Qty) "Total Quantity" from  supplier_parts_project 	group by `P#`;  
+
+
+7. Display the maximum Quantity sold for each part, provided the maximum Quantity is greater than 60.
+
+-->>	select `P#`, max(qty) from supplier_parts_project where qty > 60 group 	by `P#`;
+
+
