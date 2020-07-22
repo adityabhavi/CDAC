@@ -1,0 +1,4 @@
+Assignment – 10	Joining a Table to Itself.
+
+2) Write a query that produces the names and cities of all customers with the same rating as Hoffman.
+-->>	select cname,city from customers where rating in (select rating from 	customers where cname = 'Hoffman');
