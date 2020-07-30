@@ -1,6 +1,6 @@
-Assignment – 13	Using the UNION clause.
+Assignment â€“ 13	Using the UNION clause.
 
-1) Create a union of two queries that shows the names, cities, and ratings of all customers. Those with rating of 200 or greater will also have the words “High Rating”, while the others will have the words “Low Rating”.
+1) Create a union of two queries that shows the names, cities, and ratings of all customers. Those with rating of 200 or greater will also have the words â€œHigh Ratingâ€, while the others will have the words â€œLow Ratingâ€.
 
 -->>	select cname,city,'High Rating' rating from customers where rating 	>=200
 
@@ -11,7 +11,9 @@ Assignment – 13	Using the UNION clause.
 2) Write a command that produces the name and number of each salesperson and each customer
 with more than one current order. Put the results in alphabetical order.
 
--->>
+-->>	select cname,sname,snum from salespeople JOIN customers using(snum)
+	where snum in(select snum from customers group by snum HAVING COUNT(SNUM)>1)
+	ORDER BY SNAME,CNAME;
 
 
 3) Form a union of three queries. Have the first select the snums of all salespeople in San Jose;
@@ -21,11 +23,7 @@ and the first.
 (Note: in the sample tables as given, there would be no such redundancy. This is besides the point.)
 
 -->>	select distinct snum from customers where city='san jse'
-
 	union all
-
 	select 	snum from orders where odate='1990-10-03'
-
 	union
-
 	select snum from salespeople where city='san jose';
