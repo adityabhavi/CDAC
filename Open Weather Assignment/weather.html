@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+        <script src="weather.js"></script>
+
+    <title>Document</title>
+</head>
+
+<body style="background: url(https://source.unsplash.com/1600x900/?weather); background-size: cover; background-repeat: no-repeat;">
+    <div class="container-fluid" >
+        <div class="row bg-info" style="height: 40px;">
+            <div class="col-2 font-weight-bolder text-light pl-4" style="font-size: 25px;">
+                FORCAST
+            </div>
+            <div class="col-5"></div>
+            <div class="col-1 btn btn-dark">
+                Refresh
+            </div>
+            <div class="co-3 ml-4 p-0">
+                <input type="text" id="input" placeholder="Search city" class="form-control">
+            </div>
+            <div class="col-1 p-0">
+                <button class="btn btn-dark btn-block" onclick="search()">Search</button>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-6">
+                <div class="row">
+                    <div class="col-12 d-flex justify-content-center font-weight-bolder text-light" id="cityname" style="font-size: 30px;" >
+                        cityName
+                    </div>
+                </div>
+                <div class="row mt-3">
+                    <div class="col-1"></div>
+                    <div class="col-3 d-flex py-3  justify-content-end text-light" id="icon">
+                       
+                    </div>
+                    <!-- Temp -->
+                    <div class="col-4 font-weight-bolder d-flex align-content-center text-light justify-content-center" id="temp"
+                        style="font-size: 64px;">
+                        24 c
+                    </div>
+                    <div class="col-3 d-flex py-3 font-weight-bolder justify-content-start text-light" style="font-size: 48px;">
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row justify-content-center">
+            <div class="col-4 d-flex justify-content-center font-weight-bolder m-0 text-light" id="cloudy" style="font-size: 25px;">
+                <img src="rainy.png" alt="" style="height:20vh; width: 10vw;"> Cloudy
+            </div>
+        </div>
+
+        <div class="row mt-3">
+            <div class="col-6 pr-5 d-flex justify-content-end text-light  font-weight-bolder" id="wind" style="font-size: 30px;">
+                Wind : 4 km/hr
+            </div>
+            <div class="col-6 pl-5   font-weight-bolder text-light" style="font-size: 30px;" id="visibility">
+                Visibility : 10 km
+            </div>
+        </div>
+
+        <div class="row mt-3 justify-content-center">
+            <div class="col-6">
+                <div class="row p-0">
+                    <div class="col-4 p-0 d-flex justify-content-center text-light  font-weight-bolder" id="pressure" style="font-size: 25px;">
+                        Pressure:1005 mb
+                    </div>
+                    <div class="col-4 d-flex justify-content-center text-light font-weight-bolder" id="humidity" style="font-size: 25px;">
+                        Humidity : 34%
+                    </div>
+                    <div class="col-4 d-flex justify-content-center text-light  font-weight-bolder" id="feels" style="font-size: 25px;">
+                        Feels Like : 24
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
